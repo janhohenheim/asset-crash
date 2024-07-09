@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>crash</title>
+</head>
+
+<body>
+    <script type="module">
+        import init from './asset_crash.js'
+        init().catch((error) => {
+            if (!error.message.startsWith("Using exceptions for control flow, don't mind me. This isn't actually an error!")) {
+                throw error;
+            }
+        });
+    </script>
+</body>
+
+</html>
